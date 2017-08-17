@@ -1,0 +1,25 @@
+{
+  "name": "student-data-collection",
+  "version": "1.0.0",
+  "description": "student data collection tool for data mining",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karanwadhwa/student-data-collection.git"
+  },
+  "author": "Karan Wadhwa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/karanwadhwa/student-data-collection/issues"
+  },
+  "homepage": "https://github.com/karanwadhwa/student-data-collection#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "mongoose": "^4.11.7",
+    "pug": "^2.0.0-rc.3"
+  }
+}

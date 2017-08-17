@@ -1,0 +1,76 @@
+extends layout
+
+block content
+  h1 Student Registration Form
+  br
+  form(method='POST' action='/form')
+    .form-group
+      label.control-label Name:
+        input(type='text' name='name' class='form-control' id='inputDefault')
+    .form-group
+      label.control-label Email:
+        input(type='email' name='email' class='form-control' id='inputDefault')
+    .form-group
+      label.control-label Branch:
+        select(name='branch' class='form-control' id='select')
+          option.disabled Branch
+          option(value='comps') Computers
+          option(value='electronics') Electronics
+          option(value='extc') Electronics and Telecommunication
+          option(value='it') Information Technology
+    .form-group
+      label.control-label 12th Bifocal/Regular thingy:
+        input(type="radio" name="stream" value="bio-lang")
+        |Bio + Lang
+        input(type="radio" name="stream" value="bio-it")
+        |Bio + IT
+        input(type="radio" name="stream" value="bifocal-cs")
+        |Bifocal-CS 
+        input(type="radio" name="stream" value="bifocal-electronics")
+        |Bifocal-Electronics 
+
+    .form-group
+      label.control-label 10th Percentage:
+        input(type='number' name='ten' class='form-control')
+    .form-group
+      label.control-label 12th Percentage:
+        input(type='number' name='twelve' class='form-control')
+    .form-group
+      label.control-label JEE Marks:
+        input(type='number' name='jee' class='form-control')
+    
+    h3 Semester 1 Marks
+    .form-group
+      label.control-label Applied Mathematics 1:
+        input(type='number' name='math1' class='form-control')
+    .form-group
+      label.control-label Applied Physics 1:
+        input(type='number' name='phy1' class='form-control')
+    .form-group
+      label.control-label Applied Chemistry 1:
+        input(type='number' name='chem1' class='form-control')
+    .form-group
+      label.control-label Engineering Mechanics:
+        input(type='number' name='ed' class='form-control')
+    .form-group
+      label.control-label Basic Electrical & Electronics Engg:
+        input(type='number' name='bee' class='form-control')
+    
+    h3 Semester 2 Marks
+    .form-group
+      label.control-label Applied Mathematics 2:
+        input(type='number' name='math2' class='form-control')
+    .form-group
+      label.control-label Applied Physics 2:
+        input(type='number' name='phy2' class='form-control')
+    .form-group
+      label.control-label Applied Chemistry 2:
+        input(type='number' name='chem2' class='form-control')
+    .form-group
+      label.control-label Engineering Mechanics:
+        input(type='number' name='mech' class='form-control')
+    .form-group
+      label.control-label Structured Programming Approach:
+        input(type='number' name='spa' class='form-control')
+    br
+    button(type='submit' class='btn btn-primary') Submit
