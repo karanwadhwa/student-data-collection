@@ -1,8 +1,7 @@
 extends layout
 
 block content
-  h1 Student Registration Form
-  br
+
   form(method='POST' action='/form')
     .form-group
       label.control-label Name:
@@ -20,12 +19,16 @@ block content
           option(value='it') Information Technology
     .form-group
       label.control-label 12th Bifocal/Regular thingy:
+        br
         input(type="radio" name="stream" value="bio-lang")
         |Bio + Lang
+        br
         input(type="radio" name="stream" value="bio-it")
         |Bio + IT
+        br
         input(type="radio" name="stream" value="bifocal-cs")
         |Bifocal-CS 
+        br
         input(type="radio" name="stream" value="bifocal-electronics")
         |Bifocal-Electronics 
 

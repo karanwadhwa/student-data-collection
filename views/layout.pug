@@ -2,9 +2,38 @@ doctype html
 html
   head
     title Student Data Collection
-    link(rel='stylesheet' href='')
+    link(rel='stylesheet' type='text/css' href='../bower_components/bootstrap/dist/css/bootstrap.css')
+    link(rel='stylesheet' type='text/css' href="../css/index.css")
   
   body
+    nav.navbar.navbar-inverse
+      .navbar-header(style='margin: 10px 50px;')
+        img.active(src='../poo.png' style="width:45px; height:45px;")
+      ul.nav.navbar-nav.navbar-right(style='margin: 0 50px;')
+        li.active
+          a(href='#' data-toggle='modal' data-target='#login-modal') AdminLogin
+          .modal.fade#login-modal(role='dialog')
+            .modal-dialog.modal-sm
+              .modal-content
+                .modal-header
+                  button(type="button" class="close" data-dismiss="modal" aria-hidden="true") &times;
+                  h4.modal-title  Admin Login
+                .modal-body
+                  form(method='POST' action='/users/login')
+                    .form-group
+                      label.control-label Username:
+                        input(type='text' name='username' class='form-control' id='inputDefault')
+                    .form-group
+                      label.control-label Password:
+                        input(type='password' name='password' class='form-control' id='inputDefault')
+                .modal-footer
+                  button(type='submit' class='btn btn-default' data-dismiss='modal') Cancel
+                  button(type='submit' class='btn btn-primary') Login
+
+    h1 
     .container
       block content
+        
+  script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+  script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
   
