@@ -1,0 +1,8 @@
+.modal {
+  width: 400px  !important ;
+  height: 400px !important ;
+  overflow-y: hidden !important;
+}
+.nav-wrapper{
+ background-color: #2196F3 !important;
+}
