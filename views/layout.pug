@@ -6,7 +6,9 @@ html
     link(rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons')
     link(rel='stylesheet' type='text/css' href='../bower_components/materialize/dist/css/materialize.css'  media='screen,projection')
     link(rel='stylesheet' type='text/css' href="../css/index.css")
+    link(rel='stylesheet' type='text/css' href="../bower_components/sweetalert/dist/sweetalert.css")
     script(src="../bower_components/jquery/dist/jquery.js")
+    script(src="../bower_components/sweetalert/dist/sweetalert.min.js")
     script(src="../bower_components/materialize/dist/js/materialize.js")
     script(src='../js/index.js')
     
@@ -34,7 +36,12 @@ html
 
     h1 
     .container
-
+      != messages('message', locals)
+      if errors
+        for error in errors
+          div(class='card-panel red lighten-4 red-text text-darken-4') #{error.msg}
+          -break
       block content
+    
     br
     br    

@@ -2,6 +2,9 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const session = require('express-session');
+const flash = require('connect-flash');
+const expressValidator = require('express-validator');
 
 // Define Port
 const port = 3000;
@@ -23,17 +26,50 @@ const app = express();
 //Models
 let student = require('./models/student');
 
-//Load View Engine
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+//Body Parser Middleware
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+
+// Express Session Middleware
+app.use(session({
+  secret: 'keyboard cat',
+  resave: true,
+  saveUninitialized: true,
+}));
+
+// Express Messages Middleware
+app.use(require('connect-flash')());
+app.use(function (req, res, next) {
+  res.locals.messages = require('express-messages')(req, res);
+  next();
+});
+
+// Express Validator Middleware
+app.use(expressValidator({
+  errorFormatter: function(param, msg, value) {
+      var namespace = param.split('.')
+      , root    = namespace.shift()
+      , formParam = root;
+
+    while(namespace.length) {
+      formParam += '[' + namespace.shift() + ']';
+    }
+    return {
+      param : formParam,
+      msg   : msg,
+      value : value
+    };
+  }
+}));
 
 // Set Public Folder
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-//Body Parser Middleware
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+//Load View Engine
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
 
 // Routes
 app.use('/' , form);

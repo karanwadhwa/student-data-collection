@@ -11,7 +11,7 @@ block content
         .col.s2
         .input-field.col.s4
           select(name='branch')
-            option.disabled.selected(value='') Branch
+            option(value="" disabled selected) Branch
             option(value='comps') Computers
             option(value='electronics') Electronics
             option(value='extc') Electronics and Telecommunication
@@ -20,11 +20,11 @@ block content
       .row
         .input-field.col.s4
           input(type='email' name='email' class='validate')
-          label Email
+          label(for="email" data-error="Invalid email") Email
         .col.s2
         .input-field.col.s4
           select(name='stream')
-            option.disabled.selected(value='') 12th Stream
+            option(value="" disabled selected) 12th Stream
             option(value='bio-lang') Bio + Lang
             option(value='bio-it') Bio + IT
             option(value='biofocal-cs') Bifocal-CS
@@ -38,11 +38,11 @@ block content
         .col.s2         
         .input-field.col.s2
           input(type='number' min='0' max='100' name='twelve' class='validate')
-          label.control-label 12th Percentage:
+          label.control-label 12th Percentage
         .col.s2 
         .input-field.col.s2
           input(type='number' name='jee' class='validate')
-          label.control-label JEE Marks:
+          label.control-label JEE Marks
       
       .row
         h5.col.s6 Semester 1 Marks
@@ -51,48 +51,48 @@ block content
       .row
         .input-field.col.s4
           input(type='number' name='math1' max='100' class='validate')
-          label.control-label Applied Mathematics 1:
+          label.control-label Applied Mathematics 1
         .col.s2
         .input-field.col.s4
           input(type='number' name='math2' max='100' class='validate')
-          label.control-label Applied Mathematics 2:
+          label.control-label Applied Mathematics 2
         
       .row
         .input-field.col.s4
           input(type='number' name='phy1' max='100' class='validate')
-          label.control-label Applied Physics 1:
+          label.control-label Applied Physics 1
         .col.s2
         .input-field.col.s4
           input(type='number' name='phy2' max='100' class='validate')
-          label.control-label Applied Physics 2:
+          label.control-label Applied Physics 2
           
       .row
         .input-field.col.s4
           input(type='number' name='chem1' max='100' class='validate')
-          label.control-label Applied Chemistry 1:
+          label.control-label Applied Chemistry 1
         .col.s2
         .input-field.col.s4
           input(type='number' name='chem2' max='100' class='validate')
-          label.control-label Applied Chemistry 2:
+          label.control-label Applied Chemistry 2
         
       .row
         .input-field.col.s4
           input(type='number' name='mech' max='100' class='validate')
-          label.control-label Engineering Mechanics:
+          label.control-label Engineering Mechanics
         .col.s2
         .input-field.col.s4
           input(type='number' name='ed' max='100' class='validate')
-          label.control-label Engineering Drawing:
+          label.control-label Engineering Drawing
           
       .row
         .input-field.col.s4
           input(type='number' name='bee' max='100' class='validate')
-          label.control-label Basic Electrical & Electronics Engg:
+          label.control-label Basic Electrical & Electronics Engg
         .col.s2
         .input-field.col.s4
           input(type='number' name='spa' max='100' class='validate')
           label.control-label Structured Programming Approach
-      
-
       br
-      button(type='submit' class='btn btn-primary') Submit
+      .row
+        .col.s9
+        button(type='submit' class='btn btn-primary') Submit
