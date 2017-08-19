@@ -4,6 +4,10 @@ const router = express.Router();
 let Student = require('../models/student.js');
 
 //  Form Route
+router.get('/', function(req,res,next){
+  res.send('Request form at the following address: http://ec2-13-126-119-33.ap-south-1.compute.amazonaws.com:3000/form');
+});
+
 router.get('/form', function(req,res,next){
   res.render('index');
 });
