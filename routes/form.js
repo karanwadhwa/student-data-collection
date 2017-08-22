@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
+// Bring in Student Model
 let Student = require('../models/student.js');
 
 //  Form Route

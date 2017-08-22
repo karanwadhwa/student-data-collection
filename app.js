@@ -19,6 +19,7 @@ db.once('open', function(){
 
 // Route Files
 const form = require('./routes/form');
+const admin_area = require('./routes/admin_area');
 
 // Init App
 const app = express();
@@ -73,6 +74,7 @@ app.set('view engine', 'pug');
 
 // Routes
 app.use('/' , form);
+app.use('/admin_area', admin_area);
 
 // Start Server
 app.listen(port, function () {

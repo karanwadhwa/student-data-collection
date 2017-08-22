@@ -4,5 +4,12 @@
   overflow-y: hidden !important;
 }
 .nav-wrapper{
- background-color: #2BBBAD !important;
+ background-color: #3C8DBC !important;
+}
+.btn-primary{
+  background-color: #3C8DBC !important;
+}
+nav{
+  height: 50px !important;
+  line-height: 50px !important;
 }

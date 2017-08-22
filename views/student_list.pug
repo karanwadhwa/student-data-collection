@@ -1,0 +1,81 @@
+extends layout
+
+block content
+  h1 Student List
+  ul(class="collapsible popout" data-collapsible="accordion")
+    each student, i in students
+      -var name=student.name
+      -var email=student.email
+      -var id=student._id
+      -var branch=student.branch
+      -var stream=student.stream
+      -var ten=student.ten
+      -var twelve=student.twelve
+      -var jee =student.jee
+      -var math1=student.math1
+      -var math2=student.math2
+      -var phy1=student.phy1
+      -var phy2=student.phy2
+      -var chem1=student.chem1
+      -var chem2=student.chem2
+      -var mech=student.mech
+      -var ed=student.ed
+      -var bee=student.bee
+      -var spa=student.spa
+      
+      li
+        .collapsible-header
+          i(class='material-icons')
+            |person
+          =name
+        .collapsible-body
+          ul.row
+            li.col.s4
+              |Name: #{name}
+            li.col.s3
+              |_id: #{id}
+            li.col.s2
+              |Branch: #{branch}
+            li.col.s2
+              |12th Stream: #{stream}
+          ul.row
+            li.col.s4
+              |Email: #{email}
+            li.col.s3
+              |10th: #{ten}%
+            li.col.s2
+              |12th: #{twelve}%
+            li.col.s2
+              |JEE: #{jee}
+          hr
+          ul.row
+            li.col.s5
+              h5  Semsester 1
+            li.col.s5
+              h5  Semester 2
+          ul.row
+            li.col.s5
+              |Applied Mathematics 1: #{math1}
+            li.col.s5  
+              |Applied Mathematics 2: #{math2}
+          ul.row
+            li.col.s5
+              |Applied Physics 1: #{phy1}
+            li.col.s5  
+              |Applied Physics 2: #{phy2} 
+          ul.row
+            li.col.s5
+              |Applied Chemistry 1: #{chem1}
+            li.col.s5  
+              |Applied Chemistry 2: #{chem2}
+          ul.row
+            li.col.s5
+              |Engineering Mechanics: #{mech}
+            li.col.s5  
+              |Engineering Drawing: #{ed}
+          ul.row
+            li.col.s5
+              |Basic Electrical and Electronics Engg: #{bee}
+            li.col.s5
+              |Structured Programming Approach: #{spa}
+              
