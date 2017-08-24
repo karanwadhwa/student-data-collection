@@ -5,11 +5,13 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const flash = require('connect-flash');
 const expressValidator = require('express-validator');
+const config = require('./config/database');
+const cookieParser = require('cookie-parser');
 
 // Define Port
 const port = 3000;
 
-mongoose.connect('mongodb://localhost/student-data-collection');
+mongoose.connect(config.database);
 let db = mongoose.connection;
 
 // Check db connection
@@ -31,12 +33,13 @@ let student = require('./models/student');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+app.use(cookieParser());
 
 // Express Session Middleware
 app.use(session({
-  secret: 'keyboard cat',
-  resave: true,
+  resave: false,
   saveUninitialized: true,
+  secret: 'keyboard cat'
 }));
 
 // Express Messages Middleware
